@@ -1,0 +1,12 @@
+{
+  "name": "scientific-agent-skills",
+  "displayName": "Scientific Agent Skills",
+  "description": "53 validated research skills covering statistics, machine learning, deep learning, scientific computing, publication-grade visualization, and scholarly writing.",
+  "version": "2.70.0",
+  "logo": "assets/logo.svg",
+  "suggestedPrompts": [
+    "Design a statistical power analysis and hypothesis test for my experiment",
+    "Create a publication-ready multi-panel figure for Nature/Science using matplotlib",
+    "Train a graph neural network on topological data using PyG and PyTorch Lightning"
+  ]
+}

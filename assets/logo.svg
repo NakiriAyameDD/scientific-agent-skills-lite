@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" fill="none">
+  <defs>
+    <linearGradient id="gradPrimary" x1="32" y1="32" x2="224" y2="224" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+    <linearGradient id="gradSecondary" x1="64" y1="64" x2="192" y2="192" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="gradAccent" x1="128" y1="40" x2="128" y2="216" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Atomic Orbital 1 (Rotated -30 deg) -->
+  <ellipse cx="128" cy="128" rx="84" ry="32" 
+    transform="rotate(-30 128 128)" 
+    stroke="url(#gradPrimary)" stroke-width="6" stroke-opacity="0.85" />
+
+  <!-- Atomic Orbital 2 (Rotated 30 deg) -->
+  <ellipse cx="128" cy="128" rx="84" ry="32" 
+    transform="rotate(30 128 128)" 
+    stroke="url(#gradPrimary)" stroke-width="6" stroke-opacity="0.85" />
+
+  <!-- Atomic Orbital 3 (Rotated 90 deg) -->
+  <ellipse cx="128" cy="128" rx="84" ry="32" 
+    transform="rotate(90 128 128)" 
+    stroke="url(#gradSecondary)" stroke-width="6" stroke-opacity="0.75" />
+
+  <!-- Orbit Electrons -->
+  <circle cx="60" cy="88" r="6" fill="#38bdf8" filter="url(#glow)" />
+  <circle cx="196" cy="88" r="6" fill="#a855f7" filter="url(#glow)" />
+  <circle cx="128" cy="212" r="6" fill="#06b6d4" filter="url(#glow)" />
+
+  <!-- Central Scientific Flask -->
+  <path d="M120 74 L120 98 L88 158 C82 170 90 184 104 184 L152 184 C166 184 174 170 168 158 L136 98 L136 74" 
+    stroke="#0f172a" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M120 74 L120 98 L88 158 C82 170 90 184 104 184 L152 184 C166 184 174 170 168 158 L136 98 L136 74" 
+    stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Flask Lip -->
+  <line x1="114" y1="74" x2="142" y2="74" stroke="#0f172a" stroke-width="12" stroke-linecap="round" />
+  <line x1="114" y1="74" x2="142" y2="74" stroke="#ffffff" stroke-width="7" stroke-linecap="round" />
+
+  <!-- Liquid in Flask -->
+  <path d="M96 150 L160 150 C162 154 163 158 162 162 C160 171 154 177 146 177 L110 177 C102 177 96 171 94 162 C93 158 94 154 96 150 Z" 
+    fill="url(#gradAccent)" />
+
+  <!-- Bubbles inside Flask -->
+  <circle cx="120" cy="162" r="3.5" fill="#ffffff" opacity="0.9" />
+  <circle cx="136" cy="168" r="2.5" fill="#ffffff" opacity="0.8" />
+  <circle cx="128" cy="140" r="3" fill="#38bdf8" filter="url(#glow)" />
+</svg>

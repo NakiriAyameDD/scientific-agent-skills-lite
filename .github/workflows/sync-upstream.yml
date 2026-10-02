@@ -1,0 +1,42 @@
+name: Sync Upstream Skills
+
+on:
+  schedule:
+    # Run every Monday at 02:00 UTC
+    - cron: '0 2 * * 1'
+  workflow_dispatch: # Enable manual one-click trigger from GitHub Actions UI
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run Upstream Sync
+        run: |
+          python scripts/sync_upstream.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Changes detected from upstream. Committing and pushing..."
+            git add .
+            git commit -m "chore(sync): update skills from upstream K-Dense-AI/scientific-agent-skills"
+            git push
+          else
+            echo "No changes detected. Repository is already up to date."
+          fi
