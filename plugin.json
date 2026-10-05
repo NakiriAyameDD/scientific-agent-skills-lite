@@ -2,7 +2,7 @@
   "name": "scientific-agent-skills",
   "displayName": "Scientific Agent Skills",
   "description": "53 validated research skills covering statistics, machine learning, deep learning, scientific computing, publication-grade visualization, and scholarly writing.",
-  "version": "2.70.0",
+  "version": "2.72.0",
   "logo": "assets/logo.svg",
   "suggestedPrompts": [
     "Design a statistical power analysis and hypothesis test for my experiment",
